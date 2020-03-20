@@ -1,1 +1,39 @@
-<p>generate-page works!</p>
+<h2>Generator</h2>
+
+<div class="row justify-content-center">
+    <div class="col-lg-4">
+        <div class="card mb-3">
+            <div class="card-body">
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Text: </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="textInput" #textInput="ngModel"
+                            [(ngModel)]="inputText">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        Size:
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-success" (click)="size = size + 50">+</button>
+                            <button type="button" class="btn btn-danger" (click)="size = size - 50">-</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center">
+    <div class="border p-4 d-inline-block bg-white">
+        <ngx-kjua [text]="inputText" [crisp]="true" [size]="size">
+        </ngx-kjua>
+    </div>
+</div>
